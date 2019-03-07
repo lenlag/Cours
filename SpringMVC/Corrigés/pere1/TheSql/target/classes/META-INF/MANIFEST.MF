@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: thesql
+Implementation-Version: 0.1.0
+Built-By: 1802448
+Implementation-Vendor-Id: fr.afpa.formation
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/thesql
+Created-By: Maven Integration for Eclipse
+

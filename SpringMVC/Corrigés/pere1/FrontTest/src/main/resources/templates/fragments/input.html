@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <th:block th:fragment="myInput(name)">
+	<div th:with="invalid=${#fields.hasErrors(name)}"><div th:class="${invalid ? 'errorEdit':''}" style="display:inline-block"><input type="text" th:field="*{__${name}__}" /></div>
+    <span th:if="${invalid}" th:errors="*{__${name}__}" class="errorText">Error</span></div>
+    </th:block>
+    </form>
+    </body>
+</html>

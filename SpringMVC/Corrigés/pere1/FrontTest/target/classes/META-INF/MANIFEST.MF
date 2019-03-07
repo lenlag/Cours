@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: FrontTest
+Implementation-Version: 2.0.5.RELEASE
+Built-By: 1802448
+Implementation-Vendor-Id: org.springframework.boot
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/FrontTest
+Created-By: Maven Integration for Eclipse
+

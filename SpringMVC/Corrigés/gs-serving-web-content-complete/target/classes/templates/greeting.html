@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="'Hello, ' + ${machin} + ' ('+${age}+') !'" />
+    <h1>Method Object</h1>
+    <form th:object="${liste}" action="/greeting/listobject" method="post">
+    <table border="1">
+    <tr><th>label</th><th>code</th><th>price</th><th>quant</th></tr>
+    <tr th:each="elem,rowStat : *{list}">
+    <td><label th:text="${elem.label}"/></td><td><label th:text="${elem.code}"/></td><td><label th:text="${elem.price}"/></td><td><input type="text" th:field="*{list[__${rowStat.index}__].quant}"/><input type="hidden" th:field="*{list[__${rowStat.index}__].label}"/><input type="hidden" th:field="*{list[__${rowStat.index}__].code}"/><input type="hidden" th:field="*{list[__${rowStat.index}__].price}"/></td>
+    </tr>
+    </table>
+    <input type="submit"/>
+    </form>
+    <h1>Method array</h1>
+    <form action="/greeting/listarray" method="post">
+    <table border="1">
+    <tr><th>label</th><th>code</th><th>price</th><th>quant</th></tr>
+    <tr th:each="elem : ${liste.list}">
+    <td><label th:text="${elem.label}"/></td><td><label th:text="${elem.code}"/></td><td><label th:text="${elem.price}"/></td><td><input type="text" th:value="${elem.quant}" name="nb"/></td>
+    </tr>
+    </table>
+    <input type="submit"/>
+    </form>
+    <a href="/zoom">Panier</a>
+</body>
+</html>

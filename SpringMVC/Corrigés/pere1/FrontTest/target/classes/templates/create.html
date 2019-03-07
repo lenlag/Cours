@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body})}">
+  <body>
+	<form th:object="${specie}" th:action="@{/specie/create}" method="post">
+    <tr><td><span th:text="#{latinName}"></span> : </td><td>
+    <input th:replace="~{fragments/input :: myInput ('latinName')}" />
+    </td></tr>
+    <tr><td><span th:text="#{commonName}"></span> : </td><td>
+    <input th:replace="~{fragments/input :: myInput ('commonName')}" />
+     </td></tr>
+    <!-- </tbody> -->
+    </table>
+    <p></p>
+    <input type="submit" class="button" th:value="#{save}"/>&nbsp;
+    <input type="hidden" th:field="*{id}"/>&nbsp;
+    <input type="button" class="button" th:value="#{return}" onclick="window.location='/specie'"/>&nbsp;
+	</form>
+  </body>
+</html>

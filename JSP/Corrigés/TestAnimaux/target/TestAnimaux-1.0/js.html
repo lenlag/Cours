@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function Machin (name,age) {
+	this.name = name;
+	this.age = age;
+	this.hello = function() {
+		return "Hello world";
+	}
+}
+Machin.prototype.inc = function(i) {
+	return i+1;
+}
+class Truc  {
+	constructor (marque,modele) {
+		this.marque = marque;
+		this.modele = modele;
+	}
+	coucou(someone) {
+		return "coucou "+someone+" for marque "+this.marque+" and model "+this.modele;
+	}
+}
+function tryObject() {
+	var o = new Object();
+	o.name = "Paul";
+	o["age"] = 44;
+	console.log(o);
+	for (key in o) {
+		console.log("exploring "+key+" = "+o[key]);
+	}
+}
+function tryObjectAsPseudoJson() {
+	var o = {marque:"Renault",genre:"205"};
+	console.log(o);
+	for (key in o) {
+		console.log("exploring "+key+" = "+o[key]);
+	}
+	o.func = function () {
+		return "fonction dynamique";
+	};
+	console.log(o.func());
+}
+function tryArray() {
+	var ar = new Array();
+	ar[0] = 22;
+	ar[1] = 23;
+	ar[2] = 24;
+	console.log(ar);
+}
+function tryArrayInitialized() {
+	var ar = ["toto","titi","tata"];
+	console.log(ar);
+	ar.forEach(function (entry) {
+		console.log("array : each = "+entry);
+	});
+	for (i of ar) {
+		console.log("for of "+i);
+	}
+}
+function tryClassAsFunc() {
+	var a = new Machin("toto",22);
+	console.log(a.hello())
+	console.log(a.inc(4));
+	console.log(a.name);
+} 
+function tryClass() {
+	var c = new Truc("Honda","Civic");
+	console.log(c);
+	console.log(c.coucou("jean-charles"));
+}
+function funcWithNoParam() {
+	for (arg of arguments) {
+		var sorte = typeof arg
+		if (typeof arg === "object") {
+			arg = JSON.stringify(arg);
+		}
+		console.log("pConsole arg = "+arg+" "+sorte);
+	}
+}
+function tryFuncParam() {
+	var o = new Object();
+	o.firstName="Jean";
+	o.lastName="Valjean";
+	funcWithNoParam("AAA",2,o);
+}
+</script>
+</head>
+<body>
+<input type="button" value="Object" onClick="tryObject()"/> <input type="button" value="Object/Json" onClick="tryObjectAsPseudoJson()"/><br/>
+<input type="button" value="Array" onClick="tryArray()"/> <input type="button" value="ArrayInitialized" onClick="tryArrayInitialized()"/><br/>
+<input type="button" value="ClassAsFunc" onClick="tryClassAsFunc()"/> <input type="button" value="Class" onClick="tryClass()"/><br/>
+<input type="button" value="FuncWithNoParam" onClick="tryFuncParam()"/><br/>
+
+</body>
+</html>

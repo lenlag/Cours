@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body})}">
+  <body>
+    <script th:with="jsText=#{are_you_sure}">
+    function deleteFunc(id) {
+    	if (!window.confirm('[[${jsText}]]')) {
+    		return;
+    	}
+    	window.location = "specie/"+id+"/delete";
+    }
+    function toCreate() {
+    	window.location="specie/create";
+    }
+    function editFunc(id) {
+    	window.location = "specie/"+id+"/update";
+    }
+    </script>
+    <table class="mainTable">
+        <thead>
+        <tr>
+            <th style="width: 50%;"><span th:text="#{latinName}"></span></th>
+            <th style="width: 50%;"><span th:text="#{commonName}"></span></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr th:each="specie : ${species}">
+              <td th:text="${specie.latinName}"/>
+              <td th:text="${specie.commonName}"/>
+              <td><a th:href="'javascript:deleteFunc(' + ${specie.id} +');'"><img src="../static/resources/img/delete.png" height="16" width="16" th:src="@{/resources/img/delete.png}" /></a></td>
+              <td><a th:href="'javascript:editFunc(' + ${specie.id} +');'"><img src="../static/resources/img/edit.png" height="16" width="16" th:src="@{/resources/img/edit.png}" /></a></td>
+          </tr>
+        </tbody>
+    </table>
+    <p></p>
+    <input type="button" class="button" th:value="#{create}" onclick="toCreate()">&nbsp;<p/><p/>
+  </body>
+</html>

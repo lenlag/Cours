@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<company>
+	<staff id="1001">
+		<firstname>JC</firstname>
+		<lastname>Vidal</lastname>
+		<nickname>Jissi</nickname>
+		<salary>100000</salary>
+	</staff>
+	<staff id="2001">
+		<firstname>Maurice</firstname>
+		<lastname>Lemaudit</lastname>
+		<nickname>Momo</nickname>
+		<salary>200000</salary>
+	</staff>
+	<staff id="3001">
+		<firstname>Max</firstname>
+		<lastname>Lamenace</lastname>
+		<nickname>Maxi</nickname>
+		<salary>300000</salary>
+	</staff>
+	<staff id="4001">
+		<firstname>Henri</firstname>
+		<lastname>Zed</lastname>
+		<nickname>Zedou</nickname>
+		<salary>400000</salary>
+	</staff>
+</company>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html th:fragment="layout (template)">
+<head>
+    <link rel="stylesheet" th:href="@{/resources/css/main.css}"/>
+    <meta charset="utf-8">
+</head>
+  <body>
+	<table class="headerTable">
+	<tr><td align="left" width="50%">
+	<div th:if="${#locale.language == 'fr'}"><img th:src="@{/resources/img/chat.jpg}" /></div>
+	<div th:if="${#locale.language == 'en'}"><img th:src="@{/resources/img/chat_en.jpg}" /></div>
+	</td>
+	<td align="left"><a href="/?lang=fr"><img src="../static/resources/img/flag_fr.png" th:src="@{/resources/img/flag_fr.png}" width="16" height="16"/></a>
+	&nbsp;&nbsp;
+	<a href="/?lang=en"><img src="../static/resources/img/flag_en.png" th:src="@{/resources/img/flag_en.png}" width="16" height="16"/></a>
+	</tr>
+	</table>
+	<div>
+	<th:block th:include="${template}"/>
+	</div>
+	<p></p><br/>
+	<table>
+	<tr><td>Copyright Afpa Formation</td></tr>
+	</table>
+    <p/><p/><a href="/oups">Tester une Exception</a>
+  </body>
+</html>

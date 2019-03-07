@@ -1,0 +1,41 @@
+4 Correspondance entre code Java et diagramme de classes
+Question : Donnez un diagramme de classes correspondant au code source suivant :
+
+public interface Dessinable {
+public void dessiner ( );
+public void effacer ( );
+}
+
+abstract public class Figure implements Dessinable {
+protected String couleur;
+protected String getCouleur ( ) { return couleur; }
+protected void setCouleur ( String c ) { couleur = c; }
+}
+
+public class Point {
+private float x;
+private float y;
+public float getX ( ) { return x; }
+public float getY ( ) { return y; }
+public void Point ( float x, float y) { ... }
+}
+
+public class Cercle extends Figure {
+private float rayon;
+private Point centre;
+public Cercle ( Point centre, float rayon) { ... }
+public void dessiner ( ) { ... }
+public void effacer ( ) { ... }
+}
+public class Rectangle extends Figure {
+protected Point sommets[] = new Point[2];
+public Rectangle ( Point p1, Point p2) { ... }
+public void dessiner ( ) { ... }
+public void effacer ( ) { ... }
+}
+public class Losange extends Figure {
+protected Point sommets[] = new Point[2];
+public Losange ( Point p1, Point p2) { ... }
+public void dessiner ( ) { ... }
+public void effacer ( ) { ... }
+}
